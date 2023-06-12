@@ -93,10 +93,6 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.logo-container:hover .logo img {
-  content: url("img/logoFinalSoon.png"); 
-}
-
 .instagram-link {
   display: inline-block;
   position: fixed;
@@ -113,12 +109,34 @@ body {
   color: #ab324f;
 }
 
-.text-container {
-  position: relative;
+.launching-text {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Simpel', Arial, sans-serif;
   font-size: 40px;
   font-weight: bold;
-  color: #0000ff;
-  cursor: pointer;
+}
+.launching-text2 {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Simpel', Arial, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+.small-text {
+  font-size: 40px;
+}
+
+.big-text {
+  font-size: 60px; /* Adjust the value as needed */
 }
 
 .circle {
@@ -164,4 +182,39 @@ body {
 .container,
 .video-container {
   display: none;
+}
+
+
+/* Add this CSS code to the existing style.css file */
+
+.announcement-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.announcement-text {
+  font-size: 20px;
+  font-family: 'Simpel', Arial, sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+.announcement-text-big {
+  font-size: 40px;
+  font-family: 'Simpel', Arial, sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Add the following media query to adjust the circles on mobile devices */
+
+@media (max-width: 768px) {
+  .circle,
+  .circle-2 {
+    width: 240px;
+    height: 240px;
+  }
 }

@@ -48,4 +48,8 @@ window.addEventListener('load', function() {
     loader.style.display = 'none';
     videoContainer.style.display = 'block';
   }, 100);
+
+  setInterval(function() {
+    playNextVideo();
+  }, 30000); // Change video every 30 seconds
 });
