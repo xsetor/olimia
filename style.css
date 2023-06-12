@@ -184,7 +184,7 @@ body {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2560px) {
   .video-container {
     display: none;
   }
