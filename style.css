@@ -185,36 +185,19 @@ body {
 }
 
 
-/* Add this CSS code to the existing style.css file */
-
-.announcement-container {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.announcement-text {
-  font-size: 20px;
-  font-family: 'Simpel', Arial, sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
-
-.announcement-text-big {
-  font-size: 40px;
-  font-family: 'Simpel', Arial, sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
-
-/* Add the following media query to adjust the circles on mobile devices */
-
 @media (max-width: 768px) {
-  .circle,
-  .circle-2 {
-    width: 240px;
-    height: 240px;
+  .video-container {
+    display: none;
+  }
+
+  .logo-container {
+    position: static;
+    transform: none;
   }
 }
+
+
+
+
+
+
