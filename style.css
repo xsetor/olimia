@@ -184,20 +184,36 @@ body {
   display: none;
 }
 
-
 @media (max-width: 768px) {
   .video-container {
     display: none;
   }
 
+  .launching-text,
+  .launching-text2 {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
   .logo-container {
     position: static;
     transform: none;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle,
+  .circle-2 {
+    display: none;
   }
 }
-
-
-
-
-
-
