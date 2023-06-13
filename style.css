@@ -93,6 +93,10 @@ body {
   transition: opacity 0.5s ease;
 }
 
+.logo-container:hover .logo img {
+  content: url("img/logoFinalSoon.png"); 
+}
+
 .instagram-link {
   display: inline-block;
   position: fixed;
@@ -109,34 +113,12 @@ body {
   color: #ab324f;
 }
 
-.launching-text {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #ffffff;
-  font-family: 'Simpel', Arial, sans-serif;
+.text-container {
+  position: relative;
   font-size: 40px;
   font-weight: bold;
-}
-.launching-text2 {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #ffffff;
-  font-family: 'Simpel', Arial, sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-}
-.small-text {
-  font-size: 40px;
-}
-
-.big-text {
-  font-size: 60px; /* Adjust the value as needed */
+  color: #0000ff;
+  cursor: pointer;
 }
 
 .circle {
@@ -182,38 +164,4 @@ body {
 .container,
 .video-container {
   display: none;
-}
-
-@media (max-width: 2560px) {
-  .video-container {
-    display: none;
-  }
-
-  .launching-text,
-  .launching-text2 {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .logo-container {
-    position: static;
-    transform: none;
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
-  }
-
-  .logo {
-    width: 200px;
-    height: 200px;
-  }
-
-  .circle,
-  .circle-2 {
-    display: none;
-  }
 }

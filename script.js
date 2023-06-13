@@ -11,19 +11,24 @@ window.addEventListener('load', function() {
     const nextVideoIndex = (currentVideoIndex + 1) % videos.length;
     const nextVideo = videos[nextVideoIndex];
 
-    currentVideo.style.display = 'none';
-    nextVideo.style.display = 'block';
+    if (currentVideo) {
+      currentVideo.style.display = 'none';
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
 
-    currentVideo.pause();
-    currentVideo.currentTime = 0;
+    if (nextVideo) {
+      nextVideo.style.display = 'block';
+      nextVideo.play().then(() => {
+        if (currentVideo) {
+          currentVideo.style.display = 'none';
+        }
+      }).catch((error) => {
+        console.error('Error playing video:', error);
+      });
+    }
 
     currentVideoIndex = nextVideoIndex;
-
-    nextVideo.play().then(() => {
-      currentVideo.style.display = 'none';
-    }).catch((error) => {
-      console.error('Error playing video:', error);
-    });
   }
 
   function handleClick(event) {
@@ -32,7 +37,13 @@ window.addEventListener('load', function() {
     }
   }
 
-  document.addEventListener('click', handleClick);
+  document.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() !== 'video') {
+      playNextVideo();
+    } else {
+      event.preventDefault();
+    }
+  });
 
   videos.forEach((video, index) => {
     if (index !== 0) {
@@ -40,16 +51,16 @@ window.addEventListener('load', function() {
     }
   });
 
-  videos[currentVideoIndex].play().catch((error) => {
-    console.error('Error playing video:', error);
-  });
+  if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+    videos[currentVideoIndex].play().catch((error) => {
+      console.error('Error playing video:', error);
+    });
+  }
 
   setTimeout(function() {
     loader.style.display = 'none';
-    videoContainer.style.display = 'block';
+    if (videoContainer) {
+      videoContainer.style.display = 'block';
+    }
   }, 100);
-
-  setInterval(function() {
-    playNextVideo();
-  }, 30000); // Change video every 30 seconds
 });
