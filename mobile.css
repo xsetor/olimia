@@ -1,5 +1,5 @@
 body {
-  background-color: #000000;
+  background-color: #00305a;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -116,12 +116,7 @@ body {
   border: 1px solid #00305a;
   transition: all 0.3s ease;
   box-sizing: content-box;
-}
-
-.text-container:hover .circle {
-  border-width: 1px;
-  width: 440px;
-  height: 440px;
+  animation: none; /* Disable animation on mobile */
 }
 
 .circle-2 {
@@ -136,6 +131,13 @@ body {
   transition: all 0.3s ease;
   box-sizing: content-box;
   opacity: 0;
+  animation: none; /* Disable animation on mobile */
+}
+
+.text-container:hover .circle {
+  border-width: 1px;
+  width: 440px;
+  height: 440px;
 }
 
 .text-container:hover .circle-2 {
