@@ -65,3 +65,26 @@ window.addEventListener('load', function() {
   }, 100);
 });
 
+$(document).ready(function() {
+  $('form').submit(function(e) {
+    e.preventDefault();
+    var email = $('input[type="email"]').val();
+    $.ajax({
+      url: 'https://formsubmit.co/olimia.store@gmail.com',
+      type: 'POST',
+      data: { email: email },
+      success: function(response) {
+        $('.email-input').fadeOut('fast', function() {
+          $('.success-message').fadeIn('slow');
+        });
+      },
+      error: function() {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong! Please try again.'
+        });
+      }
+    });
+  });
+});

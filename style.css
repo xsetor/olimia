@@ -209,3 +209,17 @@ body {
 .email-input input[type="submit"]:hover {
   background-color: #a6304b; /* Darken the background color on hover */
 }
+
+
+.success-message {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+      color: green;
+      animation: fade-in 1s ease-in-out;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
