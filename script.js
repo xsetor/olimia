@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
     }
   });
 
-  if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+  if (navigator.userAgentData && !navigator.userAgentData.mobile) {
     videos[currentVideoIndex].play().catch((error) => {
       console.error('Error playing video:', error);
     });
@@ -65,26 +65,30 @@ window.addEventListener('load', function() {
   }, 100);
 });
 
-$(document).ready(function() {
-  $('form').submit(function(e) {
-    e.preventDefault();
-    var email = $('input[type="email"]').val();
-    $.ajax({
-      url: 'https://formsubmit.co/olimia.store@gmail.com',
-      type: 'POST',
-      data: { email: email },
-      success: function(response) {
-        $('.email-input').fadeOut('fast', function() {
-          $('.success-message').fadeIn('slow');
-        });
-      },
-      error: function() {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong! Please try again.'
-        });
+const form = document.getElementById('subscribe-form');
+const successMessage = document.getElementById('success-message');
+const joinText = document.querySelector('.join-text');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  fetch(this.action, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json'
+    },
+    body: formData
+  })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+        joinText.style.display = 'none';
+      } else {
+        throw new Error('Form submission failed');
       }
+    })
+    .catch(error => {
+      console.error(error);
     });
-  });
 });

@@ -4,7 +4,7 @@
   <title>Olimia - Made to Enlighten</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    if (/Mobi|Android/i.test(navigator.userAgentData)) {
       window.location.href = "mobile.html";
     }
   </script>
@@ -44,13 +44,14 @@
       <div class="circle-2"></div>
     </div>
   </a>
-  
-<div class="email-input">
-    <form>
-      <input type="email" placeholder="Enter your email address" required>
+  <div class="join-text" id="join-text">Get ready for something amazing!</div>
+	<div class="email-input">
+    <form id="subscribe-form" action="https://formsubmit.co/olimia.store@gmail.com" method="POST">
+      <input type="email" name="_replyto" placeholder="Enter your email address">
       <input type="submit" value="Subscribe">
+      <input type="hidden" name="_next" value="https://your-website.com/confirmation.html">
     </form>
-    <div class="success-message">Congratulations!</div>
+    <p id="success-message" class="success-message">Thank you! You will hear from us very soon!</p>
   </div>
   
   <script src="script.js"></script>
