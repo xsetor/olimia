@@ -10,10 +10,9 @@
   </script>
 </head>
 <body>
-  <div class="loader"></div> <!-- Add the loader element here -->
-  
+ 
 	<div class="video-container">
-		<div class="background-gif"></div> <!-- Add a div for the GIF background -->
+		
 	</div>
 	<div class="welcome-text">Launching soon, stay with us.</div>
   <a href="https://www.instagram.com/olimiastore" target="_blank" class="logo-link">
@@ -28,7 +27,15 @@
       <div class="circle-2"></div> -->
     </div>
   </a>
-  
-  <script src="script.js"></script>
+    <div class="join-text" id="join-text">Get ready for something amazing!</div>
+	<div class="email-input">
+    <form id="subscribe-form" action="https://formsubmit.co/olimia.store@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+	  <input type="hidden" name="_captcha" value="false">
+	  <button type="submit" class="btn btn-lg btn-dark btn-block">Subscribe</button>
+    </form>
+    <p id="success-message" class="success-message">Thank you! You will hear from us very soon!</p>
+  </div>
+  <script src="scriptMobile.js"></script>
 </body>
 </html>
