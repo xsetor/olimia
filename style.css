@@ -157,6 +157,7 @@ body {
   font-size: 50px;
   color: #fff0c8;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .join-text {
@@ -169,6 +170,7 @@ body {
   font-size: 30px;
   color: #fff0c8;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .email-input {
@@ -215,9 +217,10 @@ body {
 	font-family: 'Simpel', sans-serif; /* Apply the 'Simpel' font */
     display: none;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     color: #fff0c8;
     animation: fade-in 1s ease-in-out;
+	white-space: nowrap;
     }
 
     @keyframes fade-in {
@@ -261,4 +264,23 @@ body {
 
 .success-message.fade-in {
   animation-name: fadeIn;
+}
+
+.btn {
+  font-family: 'Simpel', sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #be3455;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #a6304b;
 }
