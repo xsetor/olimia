@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Olimia - Made to Enlighten</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    if (/Mobi|Android/i.test(navigator.userAgentData)) {
+      window.location.href = "mobile.html";
+    }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+  <h1>FormSubmit Demo</h1>
+  <form target="_blank" action="https://formsubmit.co/olimia.store@gmail.com" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
+</div>
+    
+</body>
+</html>

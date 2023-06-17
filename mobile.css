@@ -116,3 +116,16 @@ body {
   opacity: 1;
   border-width: 1px;
 }
+
+
+.welcome-text {
+  position: absolute;
+  top: 10%; /* Adjust the top value to position the text as desired */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; /* Center the text horizontally */
+  font-family: 'Simpel', sans-serif; /* Apply the 'Simpel' font */
+  font-size: 50px;
+  color: #fff0c8;
+  z-index: 1;
+}
